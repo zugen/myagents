@@ -73,8 +73,8 @@ class ExcSQLTool(BaseTool):
         database = args.get('database', 'ubr') #这里是向字典里添加一个键值对，如果不存在，就添加一个键值对，如果存在，就修改值。
         # 创建数据库连接
         engine = create_engine(
-            #f'mysql+mysqlconnector://student123:student321@rm-uf6z891lon6dxuqblqo.mysql.rds.aliyuncs.com:3306/{database}?charset=utf8mb4',
-            f'mysql+pymysql://student123:student321@rm-uf6z891lon6dxuqblqo.mysql.rds.aliyuncs.com:3306/{database}?charset=utf8mb4',
+            #f'mysql+mysqlconnector://{db_user}:{db_passwd}@rm-uf6z891lon6dxuqblqo.mysql.rds.aliyuncs.com:3306/{database}?charset=utf8mb4',
+            f'mysql+pymysql://{db_user}:{db_passwd}@rm-uf6z891lon6dxuqblqo.mysql.rds.aliyuncs.com:3306/{database}?charset=utf8mb4',
             connect_args={'connect_timeout': 10}, pool_size=10, max_overflow=20
         )
         try:
